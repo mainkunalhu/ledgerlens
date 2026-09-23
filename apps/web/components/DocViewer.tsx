@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -85,8 +84,7 @@ export function DocViewer({ id }: { id: string }) {
     <div className="flex flex-col gap-4">
       <header className="flex flex-wrap items-center gap-x-3 gap-y-2">
         <Button variant="outline" size="sm" render={<Link href="/" />}>
-          <ArrowLeft className="size-4" />
-          all documents
+          back
         </Button>
         <h1 className="min-w-0 flex-1 truncate text-lg font-semibold tracking-tight">
           {doc.original_filename ?? doc.id}
