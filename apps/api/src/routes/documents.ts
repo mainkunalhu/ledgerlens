@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { z } from "zod";
 import { getSql } from "../db/client.js";
 import { loadEnv } from "../lib/env.js";
+import { processDocument } from "../lib/process.js";
 import {
   resolveImagePath,
   SUPPORTED_MIMES,
@@ -37,6 +38,7 @@ documents.get("/", async (c) => {
 
 documents.post("/upload", async (c) => {
   const env = loadEnv();
+  const shouldProcess = c.req.query("process") !== "false";
   let form: FormData;
   try {
     form = await c.req.formData();
@@ -70,10 +72,40 @@ documents.post("/upload", async (c) => {
     RETURNING id, image_path, status
   `;
   const doc = rows[0] as { id: string; image_path: string; status: string };
+
+  if (!shouldProcess) {
+    return c.json(
+      { id: doc.id, status: doc.status, image_path: doc.image_path },
+      201,
+    );
+  }
+
+  const result = await processDocument(doc.id);
+  const statusRow = (
+    await sql`SELECT status FROM documents WHERE id = ${doc.id}`
+  )[0] as { status: string };
   return c.json(
-    { id: doc.id, status: doc.status, image_path: doc.image_path },
+    {
+      id: doc.id,
+      status: statusRow.status,
+      image_path: doc.image_path,
+      vision: result,
+    },
     201,
   );
+});
+
+documents.post("/:id/reprocess", async (c) => {
+  const parsed = uuidParam.safeParse(c.req.param("id"));
+  if (!parsed.success) return c.json({ error: "invalid id" }, 400);
+  const sql = getSql();
+  const exists = await sql`SELECT 1 FROM documents WHERE id = ${parsed.data}`;
+  if (exists.length === 0) return c.json({ error: "not found" }, 404);
+  const result = await processDocument(parsed.data);
+  const statusRow = (
+    await sql`SELECT status FROM documents WHERE id = ${parsed.data}`
+  )[0] as { status: string };
+  return c.json({ id: parsed.data, status: statusRow.status, vision: result });
 });
 
 documents.get("/:id", async (c) => {

@@ -41,7 +41,7 @@ describe("phase 1 documents flow", () => {
       new File([PNG_1PX], "receipt.png", { type: "image/png" }),
     );
     const up = await app.fetch(
-      req("/documents/upload", { method: "POST", body: form }),
+      req("/documents/upload?process=false", { method: "POST", body: form }),
     );
     expect(up.status).toBe(201);
     const created = await up.json();
