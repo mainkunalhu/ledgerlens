@@ -6,6 +6,17 @@ export interface WorkerField {
   bbox: { x: number; y: number; w: number; h: number } | null;
   confidence: number;
   source: string;
+  ocr_support?: boolean;
+  corrected_by_ocr?: boolean;
+}
+
+export interface WorkerCheck {
+  key: string;
+  vision_value: string;
+  ocr_value: string | null;
+  agree: boolean;
+  ocr_support: boolean;
+  note: string;
 }
 
 export type JsonValue =
@@ -22,6 +33,18 @@ export interface WorkerInferResult {
   fields: WorkerField[];
   model: string;
   latency_ms: number;
+  layout: { zones: unknown[]; table_bbox: unknown; method: string };
+  ocr: {
+    available: boolean;
+    count: number;
+    words: unknown[];
+    latency_ms: number;
+  };
+  fused: {
+    fields: WorkerField[];
+    checks: WorkerCheck[];
+    ocr_support_rate: number;
+  };
 }
 
 export class WorkerError extends Error {
@@ -48,7 +71,7 @@ export async function inferImage(
     res = await fetch(`${env.WORKER_URL}/infer`, {
       method: "POST",
       body: form,
-      signal: AbortSignal.timeout(90_000),
+      signal: AbortSignal.timeout(120_000),
     });
   } catch (err) {
     throw new WorkerError(

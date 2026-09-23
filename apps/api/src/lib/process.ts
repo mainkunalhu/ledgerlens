@@ -10,6 +10,8 @@ export interface ProcessResult {
   model?: string;
   latency_ms?: number;
   fieldCount?: number;
+  ocrAvailable?: boolean;
+  ocrSupportRate?: number;
   error?: string;
 }
 
@@ -54,17 +56,37 @@ export async function processDocument(
   }
 
   await sql.begin(async (tx) => {
+    // JSON round-trip: guarantees DB-safe payloads (strips undefined) and
+    // satisfies postgres.js's strict JSONValue parameter type.
+    const ocrJson = JSON.parse(
+      JSON.stringify({
+        available: result.ocr.available,
+        count: result.ocr.count,
+        words: result.ocr.words,
+        latency_ms: result.ocr.latency_ms,
+      }),
+    );
+    const fusedJson = JSON.parse(
+      JSON.stringify({
+        fields: result.fused.fields,
+        checks: result.fused.checks,
+        ocr_support_rate: result.fused.ocr_support_rate,
+        layout: result.layout,
+      }),
+    );
     await tx`
       UPDATE documents
       SET vision_json = ${tx.json(result.vision_json)},
+          ocr_json = ${tx.json(ocrJson)},
+          fused_json = ${tx.json(fusedJson)},
           status = 'ready', updated_at = now()
       WHERE id = ${docId}
     `;
-    await tx`DELETE FROM fields WHERE doc_id = ${docId} AND source = 'vision'`;
+    await tx`DELETE FROM fields WHERE doc_id = ${docId} AND source IN ('vision', 'fusion')`;
     for (const f of result.fields) {
       await tx`
         INSERT INTO fields (doc_id, key, value, bbox, confidence, source)
-        VALUES (${docId}, ${f.key}, ${f.value}, ${tx.json(f.bbox)}, ${f.confidence}, 'vision')
+        VALUES (${docId}, ${f.key}, ${f.value}, ${tx.json(f.bbox)}, ${f.confidence}, ${f.source})
       `;
     }
   });
@@ -74,6 +96,8 @@ export async function processDocument(
     model: result.model,
     latency_ms: result.latency_ms,
     fieldCount: result.fields.length,
+    ocrAvailable: result.ocr.available,
+    ocrSupportRate: result.fused.ocr_support_rate,
   };
 }
 

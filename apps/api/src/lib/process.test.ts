@@ -37,18 +37,23 @@ const stubInfer = async () => ({
       value: "Stub Traders",
       bbox: { x: 10, y: 20, w: 300, h: 40 },
       confidence: 0.92,
-      source: "vision",
+      source: "fusion",
+      ocr_support: true,
     },
     {
       key: "total",
       value: "999.5",
       bbox: null,
       confidence: 0.8,
-      source: "vision",
+      source: "fusion",
+      ocr_support: true,
     },
   ],
   model: "stub-model",
   latency_ms: 5,
+  layout: { zones: [], table_bbox: null, method: "stub" },
+  ocr: { available: true, count: 2, words: [], latency_ms: 1 },
+  fused: { fields: [], checks: [], ocr_support_rate: 1 },
 });
 
 describe("phase 2 vision orchestration", () => {
@@ -79,7 +84,14 @@ describe("phase 2 vision orchestration", () => {
       await sql`SELECT key, value, confidence, source FROM fields WHERE doc_id = ${id}`;
     expect(fields.length).toBe(2);
     expect(fields.find((f) => f.key === "vendor")?.value).toBe("Stub Traders");
-    expect(fields.every((f) => f.source === "vision")).toBe(true);
+    expect(fields.every((f) => f.source === "fusion")).toBe(true);
+
+    const fused =
+      await sql`SELECT ocr_json, fused_json FROM documents WHERE id = ${id}`;
+    expect((fused[0].ocr_json as { available: boolean }).available).toBe(true);
+    expect(
+      (fused[0].fused_json as { ocr_support_rate: number }).ocr_support_rate,
+    ).toBe(1);
   });
 
   test("processDocument marks failed when worker errors", async () => {
