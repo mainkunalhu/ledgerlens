@@ -15,7 +15,7 @@ app.route("/documents", documents);
 app.route("/qa", qa);
 
 app.get("/", (c) =>
-  c.json({ name: "ledgerlens-api", version: "0.3.0", phase: 3 }),
+  c.json({ name: "ledgerlens-api", version: "0.4.0", phase: 4 }),
 );
 
 export default app;

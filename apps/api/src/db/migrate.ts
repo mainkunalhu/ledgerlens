@@ -1,3 +1,4 @@
+import "../lib/loadEnvFile.js";
 import "dotenv/config";
 import { closeDb, getSql } from "./client.js";
 
