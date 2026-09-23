@@ -10,7 +10,15 @@ JSON, and answers with boxes drawn on the image as proof.
 
 ```bash
 cp .env.example .env   # add GROQ_API_KEY
-make up                # db + worker + api + web
+make up                # docker: db + worker + api + web
+```
+
+Or run everything natively with live logs (Ctrl-C stops the whole stack,
+including docker):
+
+```bash
+make dev-all
+make down              # stop everything
 ```
 
 Open http://localhost:3000 → drop an invoice → open it → ask `mismatch?`.

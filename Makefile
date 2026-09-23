@@ -1,4 +1,4 @@
-.PHONY: dev up down logs ps install typecheck lint test eval clean
+.PHONY: dev dev-all up down down-compose logs ps install typecheck lint test eval clean
 
 # docker compose v2 plugin (`docker compose`) or standalone binary (`docker-compose`)
 COMPOSE := $(shell docker compose version >/dev/null 2>&1 && echo "docker compose" || echo "docker-compose")
@@ -17,10 +17,19 @@ install:
 dev:
 	bun run dev
 
+# Full local stack (docker DB + native worker/api/web) with live logs.
+# Ctrl-C stops everything, including docker.
+dev-all:
+	./scripts/local.sh up --follow
+
+# Stop everything: native servers + docker DB (+ compose stack if present).
+down:
+	./scripts/local.sh down
+
 up: .env
 	$(COMPOSE) $(COMPOSE_BASE) --env-file .env up --build
 
-down:
+down-compose:
 	$(COMPOSE) $(COMPOSE_BASE) down
 
 logs:

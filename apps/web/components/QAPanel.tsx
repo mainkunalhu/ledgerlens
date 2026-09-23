@@ -1,6 +1,16 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { askQuestion } from "@/lib/api";
 import type { ChatMessage } from "@/lib/types";
 
@@ -18,30 +28,29 @@ export function QAPanel({ docId, onCite }: Props) {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const nextId = useRef(0);
-  const stamp = (m: ChatMessage): StampedMessage => ({
-    ...m,
-    id: nextId.current++,
-  });
+  const [nextId, setNextId] = useState(0);
 
   async function ask(question: string) {
     const q = question.trim();
     if (!q || busy) return;
+    const id = nextId;
+    setNextId(id + 2);
     setBusy(true);
     setError(null);
-    setMessages((m) => [...m, stamp({ role: "user", text: q })]);
+    setMessages((m) => [...m, { id, role: "user", text: q }]);
     setInput("");
     try {
       const r = await askQuestion(docId, q);
       setMessages((m) => [
         ...m,
-        stamp({
+        {
+          id: id + 1,
           role: "assistant",
           text: r.answer,
           value: r.value,
           citations: r.citations,
           verified: r.verified,
-        }),
+        },
       ]);
     } catch (e) {
       setError(e instanceof Error ? e.message : "question failed");
@@ -51,106 +60,113 @@ export function QAPanel({ docId, onCite }: Props) {
   }
 
   return (
-    <div className="flex h-full flex-col rounded-xl border border-zinc-800 bg-zinc-950">
-      <div className="border-b border-zinc-800 px-4 py-3">
-        <h2 className="text-sm font-semibold text-zinc-100">Ask the invoice</h2>
-        <div className="mt-2 flex flex-wrap gap-2">
+    <Card className="flex h-full min-h-100 flex-col">
+      <CardHeader>
+        <CardTitle>Ask the invoice</CardTitle>
+        <div className="flex flex-wrap gap-2">
           {CHIPS.map((c) => (
-            <button
+            <Button
               key={c}
-              type="button"
+              variant="outline"
+              size="sm"
               disabled={busy}
               onClick={() => ask(c)}
-              className="rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs font-medium text-zinc-200 transition-colors hover:border-emerald-500 hover:text-emerald-300 disabled:opacity-50"
             >
               {c}
-            </button>
+            </Button>
           ))}
         </div>
-      </div>
-
-      <div className="flex-1 space-y-3 overflow-y-auto px-4 py-3">
-        {messages.length === 0 && (
-          <p className="text-sm text-zinc-500">
-            Ask{" "}
-            <span className="font-mono text-zinc-400">
-              total? GST? mismatch?
-            </span>{" "}
-            — every answer cites the box on the image it came from.
-          </p>
-        )}
-        {messages.map((m) =>
-          m.role === "user" ? (
-            <div
-              key={m.id}
-              className="ml-auto w-fit max-w-[90%] rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-100"
-            >
-              {m.text}
-            </div>
-          ) : (
-            <div
-              key={m.id}
-              className="w-fit max-w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-200"
-            >
-              <p>{m.text}</p>
-              {m.citations && m.citations.length > 0 && (
-                <div className="mt-2 flex flex-wrap items-center gap-1.5">
-                  <span
-                    className={
-                      m.verified ? "text-emerald-400" : "text-amber-400"
-                    }
-                    title={
-                      m.verified
-                        ? "grounded in image boxes"
-                        : "not fully grounded"
-                    }
-                  >
-                    {m.verified ? "✓" : "!"}
-                  </span>
-                  {m.citations.map((cit) => (
-                    <button
-                      key={cit.key}
-                      type="button"
-                      onClick={() => onCite(cit.key)}
-                      className="rounded border border-zinc-700 px-1.5 py-0.5 font-mono text-[11px] text-sky-300 hover:border-sky-500"
-                    >
-                      {cit.label || cit.key}
-                    </button>
-                  ))}
-                </div>
+      </CardHeader>
+      <CardContent className="flex min-h-0 flex-1 flex-col">
+        <div className="flex min-h-0 flex-1 flex-col gap-3">
+          <ScrollArea className="min-h-0 flex-1">
+            <div className="flex flex-col gap-3 pr-4">
+              {messages.length === 0 && (
+                <p className="text-sm text-zinc-500">
+                  Ask <span className="font-mono">total? GST? mismatch?</span> —
+                  every answer cites the box on the image it came from.
+                </p>
               )}
+              {messages.map((m) =>
+                m.role === "user" ? (
+                  <div
+                    key={m.id}
+                    className="ml-auto w-fit max-w-full rounded-lg bg-zinc-800 px-3 py-2 text-sm"
+                  >
+                    {m.text}
+                  </div>
+                ) : (
+                  <div
+                    key={m.id}
+                    className="w-fit max-w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm"
+                  >
+                    <p>{m.text}</p>
+                    {m.citations && m.citations.length > 0 && (
+                      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <span
+                              className={
+                                m.verified
+                                  ? "text-emerald-400"
+                                  : "text-amber-400"
+                              }
+                            >
+                              {m.verified ? "✓" : "!"}
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            {m.verified
+                              ? "grounded in image boxes"
+                              : "not fully grounded"}
+                          </TooltipContent>
+                        </Tooltip>
+                        {m.citations.map((cit) => (
+                          <Badge
+                            key={cit.key}
+                            variant="outline"
+                            render={
+                              <button
+                                type="button"
+                                onClick={() => onCite(cit.key)}
+                              />
+                            }
+                          >
+                            {cit.label || cit.key}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ),
+              )}
+              {busy && (
+                <p className="animate-pulse text-sm text-zinc-500">
+                  reading invoice…
+                </p>
+              )}
+              {error && <p className="text-sm text-red-400">{error}</p>}
             </div>
-          ),
-        )}
-        {busy && (
-          <p className="animate-pulse text-sm text-zinc-500">
-            reading invoice…
-          </p>
-        )}
-        {error && <p className="text-sm text-red-400">{error}</p>}
-      </div>
-
-      <form
-        className="flex gap-2 border-t border-zinc-800 p-3"
-        onSubmit={(e) => {
-          e.preventDefault();
-          ask(input);
-        }}
-      >
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="e.g. who is the vendor?"
-          className="min-w-0 flex-1 rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-emerald-500"
-        />
-        <button
-          type="submit"
-          disabled={busy || !input.trim()}
-          className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500 disabled:opacity-50"
-        >
-          Ask
-        </button>
-      </form>
-    </div>
+          </ScrollArea>
+          <form
+            className="flex gap-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              ask(input);
+            }}
+          >
+            <Input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="e.g. who is the vendor?"
+              className="min-w-0 flex-1"
+            />
+            <Button type="submit" disabled={busy || !input.trim()}>
+              Ask
+            </Button>
+          </form>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
