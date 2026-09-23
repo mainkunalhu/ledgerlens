@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Empty,
   EmptyDescription,
@@ -82,15 +83,12 @@ export function DocViewer({ id }: { id: string }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <header className="flex flex-wrap items-center gap-3">
-        <Link
-          href="/"
-          className="flex items-center gap-1 text-sm text-zinc-400 hover:text-zinc-100"
-        >
+      <header className="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <Button variant="ghost" size="sm" render={<Link href="/" />}>
           <ArrowLeft className="size-4" />
           all documents
-        </Link>
-        <h1 className="min-w-0 flex-1 truncate text-lg font-semibold">
+        </Button>
+        <h1 className="min-w-0 flex-1 truncate text-lg font-semibold tracking-tight">
           {doc.original_filename ?? doc.id}
         </h1>
         <Badge variant={statusVariant(doc.status)}>{doc.status}</Badge>

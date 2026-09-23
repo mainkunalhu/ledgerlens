@@ -58,17 +58,26 @@ export function UploadDropzone() {
             {busy ? (
               <>
                 <Spinner />
-                <span className="text-sm font-medium">
+                <span className="text-sm font-semibold">
                   Analyzing with Groq vision…
                 </span>
-                <span className="text-xs text-zinc-500">
-                  layout → OCR cross-check → table JSON (up to a minute)
+                <span className="max-w-sm text-xs leading-relaxed text-zinc-500">
+                  Detecting layout, cross-checking OCR, rebuilding the table.
+                  This takes up to a minute.
                 </span>
               </>
             ) : (
               <>
-                <Upload className="size-6 text-zinc-400" />
-                <span className="text-sm font-medium">
+                <span
+                  className={`flex size-11 items-center justify-center rounded-xl border transition-colors ${
+                    drag
+                      ? "border-emerald-400/60 bg-emerald-950/60"
+                      : "border-zinc-800 bg-zinc-900"
+                  }`}
+                >
+                  <Upload className="size-5 text-zinc-300" />
+                </span>
+                <span className="text-sm font-semibold">
                   Drop an invoice photo, or click to browse
                 </span>
                 <span className="text-xs text-zinc-500">

@@ -68,7 +68,9 @@ export function FieldsPanel({
                               {f.key}
                             </span>
                           </button>
-                          <div className="mt-1 font-medium">{f.value}</div>
+                          <div className="mt-1 text-sm font-medium">
+                            {f.value}
+                          </div>
                         </TableCell>
                         <TableCell>
                           <Progress value={Math.round(f.confidence * 100)} />
@@ -85,8 +87,8 @@ export function FieldsPanel({
                 </Table>
 
                 {items.length > 0 && (
-                  <div className="mt-4">
-                    <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                  <div className="mt-5">
+                    <h3 className="text-muted-foreground mb-2 text-xs font-semibold tracking-wider uppercase">
                       Line items ({items.length})
                     </h3>
                     <Table>
@@ -115,7 +117,7 @@ export function FieldsPanel({
                 )}
 
                 {doc.fused_json && (
-                  <p className="mt-3 text-xs text-zinc-600">
+                  <p className="text-muted-foreground mt-3 font-mono text-xs">
                     OCR support rate:{" "}
                     {Math.round((doc.fused_json.ocr_support_rate ?? 0) * 100)}%
                     {" · "}layout: {doc.fused_json.layout?.method ?? "—"}

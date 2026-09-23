@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Spinner } from "@/components/ui/spinner";
 import {
   Tooltip,
   TooltipContent,
@@ -29,6 +30,14 @@ export function QAPanel({ docId, onCite }: Props) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [nextId, setNextId] = useState(0);
+  const endRef = useRef<HTMLDivElement>(null);
+  const seenRef = useRef(0);
+
+  useEffect(() => {
+    if (messages.length === seenRef.current && !busy) return;
+    seenRef.current = messages.length;
+    endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, [messages.length, busy]);
 
   async function ask(question: string) {
     const q = question.trim();
@@ -91,14 +100,14 @@ export function QAPanel({ docId, onCite }: Props) {
                 m.role === "user" ? (
                   <div
                     key={m.id}
-                    className="ml-auto w-fit max-w-full rounded-lg bg-zinc-800 px-3 py-2 text-sm"
+                    className="bg-primary text-primary-foreground ml-auto w-fit max-w-full rounded-2xl rounded-br-md px-3.5 py-2 text-sm"
                   >
                     {m.text}
                   </div>
                 ) : (
                   <div
                     key={m.id}
-                    className="w-fit max-w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm"
+                    className="border-border bg-card w-fit max-w-full rounded-2xl rounded-bl-md border px-3.5 py-2.5 text-sm leading-relaxed"
                   >
                     <p>{m.text}</p>
                     {m.citations && m.citations.length > 0 && (
@@ -141,11 +150,13 @@ export function QAPanel({ docId, onCite }: Props) {
                 ),
               )}
               {busy && (
-                <p className="animate-pulse text-sm text-zinc-500">
-                  reading invoice…
-                </p>
+                <div className="flex items-center gap-2 py-1">
+                  <Spinner className="size-4" />
+                  <p className="text-sm text-zinc-500">reading invoice…</p>
+                </div>
               )}
               {error && <p className="text-sm text-red-400">{error}</p>}
+              <div ref={endRef} />
             </div>
           </ScrollArea>
           <form
