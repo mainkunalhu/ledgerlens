@@ -27,7 +27,7 @@ bun run dev:web & bun run dev:api & uv run --project services/vision-worker fast
 
 ## Phases
 
-- [x] Phase 0 — monorepo + bun/uv + Docker + CI
+- [x] Phase 0 — monorepo + bun/uv + Docker
 - [ ] Phase 1 — contracts + DB
 - [ ] Phase 2 — vision MVP (Groq-only, no PaddleOCR)
 - [ ] Phase 3 — OCR fusion + layout
