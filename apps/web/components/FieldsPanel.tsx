@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -16,6 +16,44 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { colorFor } from "@/lib/boxes";
 import type { DocumentDetail } from "@/lib/types";
+
+/** Minimal JSON syntax highlighter (no deps): keys sky, strings emerald,
+ *  numbers amber, booleans/null violet. */
+function JsonView({ data }: { data: unknown }) {
+  const text = JSON.stringify(data, null, 2);
+  const nodes: ReactNode[] = [];
+  const re =
+    /("(?:[^"\\]|\\.)*")(\s*:)?|\b(true|false|null)\b|-?\b\d+(?:\.\d+)?(?:[eE][+-]?\d+)?\b/g;
+  let last = 0;
+  let k = 0;
+  for (
+    let m: RegExpExecArray | null = re.exec(text);
+    m !== null;
+    m = re.exec(text)
+  ) {
+    if (m.index > last) nodes.push(text.slice(last, m.index));
+    const [tok, str, colon, keyword] = m;
+    const cls = colon
+      ? "text-sky-300"
+      : keyword
+        ? "text-violet-300"
+        : str
+          ? "text-emerald-300"
+          : "text-amber-300";
+    nodes.push(
+      <span key={k++} className={cls}>
+        {tok}
+      </span>,
+    );
+    last = m.index + tok.length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return (
+    <pre className="font-mono text-xs leading-relaxed whitespace-pre-wrap text-zinc-500">
+      {nodes}
+    </pre>
+  );
+}
 
 export function FieldsPanel({
   doc,
@@ -47,7 +85,7 @@ export function FieldsPanel({
             </TabsTrigger>
             <TabsTrigger value="json">JSON</TabsTrigger>
           </TabsList>
-          <TabsContent value="fields" className="h-100 overflow-hidden">
+          <TabsContent value="fields" className="h-100 min-h-0 overflow-hidden">
             <ScrollArea className="h-full">
               <div className="pr-4">
                 <Table>
@@ -126,11 +164,11 @@ export function FieldsPanel({
               </div>
             </ScrollArea>
           </TabsContent>
-          <TabsContent value="json" className="h-100 overflow-hidden">
+          <TabsContent value="json" className="h-100 min-h-0 overflow-hidden">
             <ScrollArea className="h-full">
-              <pre className="pr-4 font-mono text-xs leading-relaxed">
-                {JSON.stringify(doc.vision_json, null, 2)}
-              </pre>
+              <div className="pr-4">
+                <JsonView data={doc.vision_json} />
+              </div>
             </ScrollArea>
           </TabsContent>
         </Tabs>
