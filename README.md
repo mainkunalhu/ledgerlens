@@ -4,7 +4,11 @@ Upload a messy invoice photo and ask `total? GST? mismatch?`. It detects layout,
 reads the page with a vision model cross-checked against OCR, rebuilds tables to
 JSON, and answers with boxes drawn on the image as proof.
 
-> Hiring line: `Vision doc QA via Groq, 100% field-F1 on 100 synthetic invoices, bbox-grounded answers.`
+## Demo
+
+<video src="docs/assets/demo.mp4" controls width="100%"></video>
+
+Can&apos;t see the video? [Watch it directly](./docs/assets/demo.mp4).
 
 ## Demo (60 seconds)
 
