@@ -48,7 +48,7 @@ export function FieldsPanel({
             <tbody>
               {doc.fields.map((f, i) => (
                 <tr
-                  key={f.id ?? i}
+                  key={f.id ?? `${f.key}-${f.value}`}
                   className="border-b border-zinc-900 last:border-0"
                 >
                   <td className="py-2 pr-2">
@@ -108,9 +108,9 @@ export function FieldsPanel({
                   </tr>
                 </thead>
                 <tbody>
-                  {items.map((li, i) => (
+                  {items.map((li) => (
                     <tr
-                      key={i}
+                      key={`${li.desc}-${li.qty}-${li.rate}-${li.amount}`}
                       className="border-t border-zinc-900 text-zinc-200"
                     >
                       <td className="py-1.5 pr-2">{li.desc}</td>

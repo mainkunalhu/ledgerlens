@@ -8,6 +8,12 @@
     {
       "includes": ["**/*.css"],
       "linter": { "rules": { "suspicious": { "noUnknownAtRules": "off" } } }
+    },
+    {
+      "includes": ["datasets/**", "uploads/**"],
+      "linter": { "enabled": false },
+      "formatter": { "enabled": false },
+      "assist": { "enabled": false }
     }
   ]
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import type { OverlayBox } from "@/lib/types";
 
 interface Props {
@@ -23,24 +23,19 @@ export function BboxOverlay({
   onSelect,
   dimOthers = true,
 }: Props) {
-  const wrapRef = useRef<HTMLDivElement>(null);
   const [hoverId, setHoverId] = useState<string | null>(null);
   const focusId = activeId ?? hoverId;
   const [failed, setFailed] = useState(false);
 
   return (
-    <div
-      ref={wrapRef}
-      className="relative w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950"
-      onClick={() => onSelect(null)}
-    >
+    <div className="relative w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950">
       {failed ? (
         <div className="flex aspect-[3/4] items-center justify-center text-sm text-zinc-500">
           image unavailable
         </div>
       ) : (
-        // biome-ignore lint/performance/noImgElement: dynamic cross-origin API image with overlay; next/image optimization not applicable
         // eslint-disable-next-line @next/next/no-img-element
+        // biome-ignore lint/performance/noImgElement: dynamic cross-origin API image with overlay; next/image optimization not applicable
         <img
           src={src}
           alt="invoice"

@@ -1,14 +1,11 @@
-FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 WORKDIR /app
 COPY services/vision-worker/pyproject.toml services/vision-worker/.python-version ./
-
 # PaddleOCR (~2GB, x86_64 only) is opt-in: light image by default.
 #   docker build --build-arg OCR=1 ...   # full fusion image
 # Local ARM Mac dev always runs vision-only (graceful fallback).
 ARG OCR=0
-RUN --mount=type=cache,target=/root/.cache/uv \
-  if [ "$OCR" = "1" ]; then uv sync --no-dev --extra ocr; else uv sync --no-dev; fi
-
+RUN if [ "$OCR" = "1" ]; then uv sync --no-dev --extra ocr; else uv sync --no-dev; fi
 COPY services/vision-worker/ ./
 EXPOSE 8000
 CMD ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

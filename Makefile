@@ -1,23 +1,33 @@
 .PHONY: dev up down logs ps install typecheck lint test eval clean
 
+# docker compose v2 plugin (`docker compose`) or standalone binary (`docker-compose`)
+COMPOSE := $(shell docker compose version >/dev/null 2>&1 && echo "docker compose" || echo "docker-compose")
+# Pin project directory to repo root so relative paths resolve identically
+# across compose implementations.
+COMPOSE_BASE := --project-directory $(CURDIR) -f infra/docker-compose.yml
+
 install:
 	bun install
 	uv sync --project services/vision-worker
 
+.env:
+	cp .env.example .env
+	@echo "created .env from .env.example — add your GROQ_API_KEY"
+
 dev:
 	bun run dev
 
-up:
-	docker compose -f infra/docker-compose.yml --env-file .env up --build
+up: .env
+	$(COMPOSE) $(COMPOSE_BASE) --env-file .env up --build
 
 down:
-	docker compose -f infra/docker-compose.yml down
+	$(COMPOSE) $(COMPOSE_BASE) down
 
 logs:
-	docker compose -f infra/docker-compose.yml logs -f
+	$(COMPOSE) $(COMPOSE_BASE) logs -f
 
 ps:
-	docker compose -f infra/docker-compose.yml ps
+	$(COMPOSE) $(COMPOSE_BASE) ps
 
 typecheck:
 	bun run typecheck

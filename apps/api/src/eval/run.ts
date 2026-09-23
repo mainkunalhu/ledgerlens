@@ -9,7 +9,7 @@
 
 import { isAbsolute, join, resolve } from "node:path";
 import { repoRoot } from "../lib/paths.js";
-import { normNum, prf, scoreFields, scoreItems, type BBox } from "./score.js";
+import { type BBox, normNum, prf, scoreFields, scoreItems } from "./score.js";
 
 interface Args {
   labels: string;
@@ -283,8 +283,9 @@ async function main(): Promise<void> {
     mfp = 0,
     mfn = 0,
     f1sum = 0;
-  const keyRows = keys.map((k) => {
-    const s = byKey.get(k)!;
+  const keyRows = keys.flatMap((k) => {
+    const s = byKey.get(k);
+    if (!s) return [];
     const { p, r, f1 } = prf(s.tp, s.fp, s.fn);
     const miou = s.ious.length
       ? s.ious.reduce((a, b) => a + b, 0) / s.ious.length
@@ -293,11 +294,11 @@ async function main(): Promise<void> {
     mfp += s.fp;
     mfn += s.fn;
     f1sum += f1;
-    return { key: k, p, r, f1, miou, n: s.tp + s.fn };
+    return [{ key: k, p, r, f1, miou, n: s.tp + s.fn, ious: s.ious }];
   });
   const micro = prf(mtp, mfp, mfn);
   const macroF1 = keys.length ? f1sum / keys.length : 0;
-  const allIous = keyRows.flatMap((k) => byKey.get(k.key)!.ious);
+  const allIous = keyRows.flatMap((k) => k.ious);
   const mIoU = allIous.length
     ? allIous.reduce((a, b) => a + b, 0) / allIous.length
     : 0;

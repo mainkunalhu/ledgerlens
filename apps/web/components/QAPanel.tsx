@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { askQuestion } from "@/lib/api";
 import type { ChatMessage } from "@/lib/types";
 
@@ -11,30 +11,37 @@ interface Props {
   onCite: (key: string | null) => void;
 }
 
+type StampedMessage = ChatMessage & { id: number };
+
 export function QAPanel({ docId, onCite }: Props) {
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [messages, setMessages] = useState<StampedMessage[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const nextId = useRef(0);
+  const stamp = (m: ChatMessage): StampedMessage => ({
+    ...m,
+    id: nextId.current++,
+  });
 
   async function ask(question: string) {
     const q = question.trim();
     if (!q || busy) return;
     setBusy(true);
     setError(null);
-    setMessages((m) => [...m, { role: "user", text: q }]);
+    setMessages((m) => [...m, stamp({ role: "user", text: q })]);
     setInput("");
     try {
       const r = await askQuestion(docId, q);
       setMessages((m) => [
         ...m,
-        {
+        stamp({
           role: "assistant",
           text: r.answer,
           value: r.value,
           citations: r.citations,
           verified: r.verified,
-        },
+        }),
       ]);
     } catch (e) {
       setError(e instanceof Error ? e.message : "question failed");
@@ -72,17 +79,17 @@ export function QAPanel({ docId, onCite }: Props) {
             — every answer cites the box on the image it came from.
           </p>
         )}
-        {messages.map((m, i) =>
+        {messages.map((m) =>
           m.role === "user" ? (
             <div
-              key={i}
+              key={m.id}
               className="ml-auto w-fit max-w-[90%] rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-100"
             >
               {m.text}
             </div>
           ) : (
             <div
-              key={i}
+              key={m.id}
               className="w-fit max-w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-200"
             >
               <p>{m.text}</p>
@@ -100,9 +107,9 @@ export function QAPanel({ docId, onCite }: Props) {
                   >
                     {m.verified ? "✓" : "!"}
                   </span>
-                  {m.citations.map((cit, j) => (
+                  {m.citations.map((cit) => (
                     <button
-                      key={j}
+                      key={cit.key}
                       type="button"
                       onClick={() => onCite(cit.key)}
                       className="rounded border border-zinc-700 px-1.5 py-0.5 font-mono text-[11px] text-sky-300 hover:border-sky-500"

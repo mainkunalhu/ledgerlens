@@ -35,7 +35,7 @@ qa.post("/", async (c) => {
   const fields = rows as unknown as DocField[];
   const visionJson = (doc.vision_json ?? {}) as Record<string, unknown>;
 
-  let answer;
+  let answer: Awaited<ReturnType<typeof answerQuestion>>;
   try {
     answer = await answerQuestion({ visionJson, fields }, question);
   } catch (err) {
