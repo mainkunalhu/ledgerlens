@@ -1,0 +1,10 @@
+FROM oven/bun:1.4-slim AS base
+WORKDIR /app
+COPY package.json bun.lock* ./
+COPY apps/web/package.json ./apps/web/
+COPY packages/shared/package.json ./packages/shared/
+RUN bun install --filter web
+COPY . .
+WORKDIR /app/apps/web
+EXPOSE 3000
+CMD ["bun", "dev", "--port", "3000", "--hostname", "0.0.0.0"]

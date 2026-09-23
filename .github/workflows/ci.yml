@@ -1,0 +1,24 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  ts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with: { bun-version: latest }
+      - run: bun install
+      - run: bunx biome check .
+      - run: bun run --filter web build
+      - run: bun run --filter api typecheck
+  py:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --project services/vision-worker --group dev
+      - run: uv run --project services/vision-worker ruff check app tests
+      - run: uv run --project services/vision-worker pytest -q

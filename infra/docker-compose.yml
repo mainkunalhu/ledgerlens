@@ -1,0 +1,67 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: ledgerlens-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ledger}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ledgerpw}
+      POSTGRES_DB: ${POSTGRES_DB:-ledgerlens}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-ledger}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: infra/Dockerfile.worker
+    container_name: ledgerlens-worker
+    env_file:
+      - ../../.env
+    environment:
+      DATABASE_URL: postgresql://ledger:ledgerpw@db:5432/ledgerlens
+    ports:
+      - "${WORKER_PORT:-8000}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ../../uploads:/app/uploads
+
+  api:
+    build:
+      context: ../..
+      dockerfile: infra/Dockerfile.api
+    container_name: ledgerlens-api
+    env_file:
+      - ../../.env
+    environment:
+      DATABASE_URL: postgresql://ledger:ledgerpw@db:5432/ledgerlens
+      WORKER_URL: http://worker:8000
+    ports:
+      - "${API_PORT:-8787}:8787"
+    depends_on:
+      - db
+      - worker
+
+  web:
+    build:
+      context: ../..
+      dockerfile: infra/Dockerfile.web
+    container_name: ledgerlens-web
+    env_file:
+      - ../../.env
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8787
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:

@@ -1,0 +1,8 @@
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
+WORKDIR /app
+COPY services/vision-worker/pyproject.toml services/vision-worker/.python-version ./
+# Phase 0: light deps only. Phase 3 adds `ocr` extra (PaddleOCR ~2GB).
+RUN --mount=type=cache,target=/root/.cache/uv uv sync --no-dev
+COPY services/vision-worker/ ./
+EXPOSE 8000
+CMD ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,35 @@
+node_modules/
+.next/
+out/
+dist/
+build/
+*.log
+.DS_Store
+
+# bun
+bun.lockb
+*.bun
+
+# python / uv
+__pycache__/
+*.pyc
+.venv/
+.uv-cache/
+.pytest_cache/
+.ruff_cache/
+services/vision-worker/.venv/
+
+# env
+.env
+.env*.local
+
+# uploads (local S3 stand-in, keep .gitkeep)
+uploads/*
+!uploads/.gitkeep
+
+# docker volumes
+.pgdata/
+
+# OS / IDE
+.vscode/
+.idea/
