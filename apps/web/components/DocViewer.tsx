@@ -84,7 +84,7 @@ export function DocViewer({ id }: { id: string }) {
   return (
     <div className="flex flex-col gap-4">
       <header className="flex flex-wrap items-center gap-x-3 gap-y-2">
-        <Button variant="ghost" size="sm" render={<Link href="/" />}>
+        <Button variant="outline" size="sm" render={<Link href="/" />}>
           <ArrowLeft className="size-4" />
           all documents
         </Button>
