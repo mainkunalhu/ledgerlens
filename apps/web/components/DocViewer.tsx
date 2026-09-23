@@ -113,13 +113,13 @@ export function DocViewer({ id }: { id: string }) {
               onSelect={setActiveId}
             />
           </div>
-          <div className="min-h-100 min-w-0 lg:col-span-4">
+          <div className="h-150 min-w-0 lg:col-span-4 lg:h-180">
             <QAPanel
               docId={id}
               onCite={(key) => key && setActiveId(keyToBoxId(boxes, key))}
             />
           </div>
-          <div className="min-h-100 min-w-0 lg:col-span-3">
+          <div className="h-150 min-w-0 lg:col-span-3 lg:h-180">
             <FieldsPanel
               doc={doc}
               onSelect={(key) => key && setActiveId(keyToBoxId(boxes, key))}

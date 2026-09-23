@@ -85,7 +85,10 @@ export function FieldsPanel({
             </TabsTrigger>
             <TabsTrigger value="json">JSON</TabsTrigger>
           </TabsList>
-          <TabsContent value="fields" className="h-100 min-h-0 overflow-hidden">
+          <TabsContent
+            value="fields"
+            className="min-h-0 flex-1 overflow-hidden"
+          >
             <ScrollArea className="h-full">
               <div className="pr-4">
                 <Table>
@@ -164,7 +167,7 @@ export function FieldsPanel({
               </div>
             </ScrollArea>
           </TabsContent>
-          <TabsContent value="json" className="h-100 min-h-0 overflow-hidden">
+          <TabsContent value="json" className="min-h-0 flex-1 overflow-hidden">
             <ScrollArea className="h-full">
               <div className="pr-4">
                 <JsonView data={doc.vision_json} />

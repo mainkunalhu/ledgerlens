@@ -33,13 +33,19 @@ type Intent = "total" | "gst" | "mismatch" | "freeform";
 export function classifyQuestion(question: string): Intent {
   const q = question.toLowerCase();
   if (
-    /(mismatch|mismatch|tally|talley|difference|differ|verify|correct|check\b|reconcile)/.test(
+    /(mismatch|tally|talley|difference|differ|verify|correct|check\b|reconcile)/.test(
       q,
     )
   )
     return "mismatch";
   if (/(gst|tax|vat|cgst|sgst|igst)/.test(q)) return "gst";
-  if (/(total|amount payable|grand total|net payable|payable|bill)/.test(q))
+  // NOTE: bare "bill" must NOT match here — "what is this bill about?"
+  // is a freeform question for the LLM, not a total lookup.
+  if (
+    /(grand total|net payable|amount payable|\btotal\b|\bpayable\b|how much|bill (total|amount)|total bill)/.test(
+      q,
+    )
+  )
     return "total";
   return "freeform";
 }

@@ -82,6 +82,14 @@ describe("qa classification", () => {
     expect(classifyQuestion("any mismatch?")).toBe("mismatch");
     expect(classifyQuestion("who is the vendor?")).toBe("freeform");
   });
+
+  test("generic bill questions reach the LLM, not the total solver", () => {
+    expect(classifyQuestion("what is this bill even about?")).toBe("freeform");
+    expect(classifyQuestion("summarise this bill")).toBe("freeform");
+    expect(classifyQuestion("what's the total bill?")).toBe("total");
+    expect(classifyQuestion("bill amount?")).toBe("total");
+    expect(classifyQuestion("how much do I pay?")).toBe("total");
+  });
 });
 
 describe("qa deterministic solvers", () => {
