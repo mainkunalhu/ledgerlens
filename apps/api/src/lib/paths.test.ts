@@ -6,7 +6,9 @@ import { storageDir } from "./storage.js";
 describe("paths", () => {
   test("repoRoot finds the monorepo root", async () => {
     const root = repoRoot();
-    const pkg = JSON.parse(await Bun.file(join(root, "package.json")).text()) as {
+    const pkg = JSON.parse(
+      await Bun.file(join(root, "package.json")).text(),
+    ) as {
       name: string;
     };
     expect(pkg.name).toBe("ledgerlens");

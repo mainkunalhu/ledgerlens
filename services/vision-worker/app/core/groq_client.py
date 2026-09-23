@@ -30,7 +30,8 @@ Schema (all bboxes normalized 0-1000 as {"x":<left>,"y":<top>,"w":<width>,"h":<h
 
 Rules:
 - numbers must be plain (1250.5), never "₹1,250.00" or with currency text.
-- bbox must tightly surround the VALUE on the page, not the label.
+- bbox must tightly surround the VALUE digits/letters only, not the label and not the whole row:
+  x starts at the value's FIRST visible character, w ends at its LAST character.
 - confidence < 0.5 when the value is blurry, cropped, or guessed from context.
 - null for anything not clearly visible. NEVER invent numbers, names, or line items.
 - line_items: one entry per printed row; merge/split rows conservatively (one entry per visual row)."""

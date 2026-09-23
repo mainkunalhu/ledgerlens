@@ -1,0 +1,6852 @@
+{
+ "n": 100,
+ "failed": 0,
+ "seed_note": "see datasets README for regeneration",
+ "microF1": 1,
+ "macroF1": 1,
+ "mIoU": 0.20805722446055896,
+ "perKey": [
+  {
+   "key": "date",
+   "p": 1,
+   "r": 1,
+   "f1": 1,
+   "miou": 0.32463601016971777,
+   "n": 100
+  },
+  {
+   "key": "gst",
+   "p": 1,
+   "r": 1,
+   "f1": 1,
+   "miou": 0,
+   "n": 100
+  },
+  {
+   "key": "invoice_no",
+   "p": 1,
+   "r": 1,
+   "f1": 1,
+   "miou": 0.3710328236388656,
+   "n": 100
+  },
+  {
+   "key": "subtotal",
+   "p": 1,
+   "r": 1,
+   "f1": 1,
+   "miou": 0,
+   "n": 100
+  },
+  {
+   "key": "total",
+   "p": 1,
+   "r": 1,
+   "f1": 1,
+   "miou": 0.0013021224729439966,
+   "n": 100
+  },
+  {
+   "key": "vendor",
+   "p": 1,
+   "r": 1,
+   "f1": 1,
+   "miou": 0.5513723904818257,
+   "n": 100
+  }
+ ],
+ "items": {
+  "p": 1,
+  "r": 1,
+  "f1": 1
+ },
+ "qa": {
+  "totalAcc": 1,
+  "mismatchAcc": 1,
+  "n": 20
+ },
+ "tiers": [
+  {
+   "tier": "blur",
+   "p": 1,
+   "r": 1,
+   "f1": 1
+  },
+  {
+   "tier": "jpeg",
+   "p": 1,
+   "r": 1,
+   "f1": 1
+  },
+  {
+   "tier": "dim",
+   "p": 1,
+   "r": 1,
+   "f1": 1
+  },
+  {
+   "tier": "noise",
+   "p": 1,
+   "r": 1,
+   "f1": 1
+  },
+  {
+   "tier": "clean",
+   "p": 1,
+   "r": 1,
+   "f1": 1
+  },
+  {
+   "tier": "rotate",
+   "p": 1,
+   "r": 1,
+   "f1": 1
+  }
+ ],
+ "latencyMs": {
+  "p50": 7174,
+  "p95": 29812
+ },
+ "docs": [
+  {
+   "id": "inv_000",
+   "tier": "blur",
+   "ok": true,
+   "latencyMs": 6734,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6780256735817628
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5129499449479121
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6329031776387961
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_001",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 4204,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.7764054005039339
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5134752005506436
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4459290823314563
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_002",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 2282,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6282763870172517
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5943723499935754
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.55192085362849
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_003",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 20018,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6538689477404659
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5183649621015054
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.27360082881871733
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_004",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 6334,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6900219712683414
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5209183189450718
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5140014527104525
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_005",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 9146,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6557142354659574
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.30485745305400286
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.13667803214807586
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_006",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 4296,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6777255467435712
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2953411167891379
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4022971431602958
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_007",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 9256,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6282763870172517
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4652217027907635
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.41649205390431343
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_008",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 4109,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5318307866777064
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5674249859786876
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5080960357342262
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_009",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 8637,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4371570817594884
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.24576998369284617
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.36250878094299466
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_010",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 8710,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.7612180990408981
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6601429015222114
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6728010289898094
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_011",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 8589,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.34499526088453436
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.1694603119049702
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.14713274458714734
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_012",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 8837,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6567881346129993
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.15126641029041232
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.26712395205431977
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_013",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 8651,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4987729693051311
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4638822378848685
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.25504279917100875
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_014",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 9011,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.49004786441032594
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.28617885046585817
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.12399376735786997
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_015",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 8428,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_016",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 8398,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4823144145878041
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.055379314116938985
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_017",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 8698,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6341921069465174
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.41709352928586707
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4980949286705852
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_018",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 8309,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.3575805173966323
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.18750470281126835
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.17847157502329924
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_019",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 8002,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.17248005414235332
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.0012248635166518082
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "qaTotal": true,
+   "qaMismatch": true
+  },
+  {
+   "id": "inv_020",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 7888,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4436575056563836
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2879373474369407
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2737076417704012
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_021",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 7769,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_022",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 8027,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.585636436295821
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5800853588621245
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5978076638573243
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_023",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 29978,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6045313161241154
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4707877784059692
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.24312984922957465
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_024",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 6517,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6609063326394473
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5042995881975726
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.47479097811941123
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_025",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6848,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6473491874180309
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4008321062904499
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4248554763178529
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_026",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 28436,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6609226655489915
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5082247433991365
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.44120362455120515
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_027",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 4378,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6290851900193786
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.15650653890975
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.12819395036088077
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_028",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 4102,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.7091216807556551
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5675623010803903
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.3705326373914269
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_029",
+   "tier": "blur",
+   "ok": true,
+   "latencyMs": 4494,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6184260054971199
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.46124635089912286
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2554242603474758
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_030",
+   "tier": "blur",
+   "ok": true,
+   "latencyMs": 4973,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5623957416587427
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.49211018119769223
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5985292440379534
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_031",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 4805,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6675579868592415
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.3154270736544301
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.29195061519239307
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_032",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 4120,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6673491568593009
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6009356431650547
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5786457044535117
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_033",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 3639,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.41411903455073434
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.31215088387987144
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.14361244408611287
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_034",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 3804,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5200133815532054
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2953411167891379
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.26712395205431977
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_035",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6137,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5155679225480229
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.14274489423439826
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.013733554609519463
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_036",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 8839,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6976028116596307
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6361423847211388
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.45456533738817034
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_037",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 8841,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5093038500196649
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.28617885046585817
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.10817159503442918
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_038",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 8991,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6898664775964082
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.46125105618926937
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4034645361877084
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_039",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 8248,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.39689820954361604
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2372773358727315
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.08097459267407385
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_040",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 8973,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.25319508078128766
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_041",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 9215,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6869659970288252
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.546127198735412
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4425667971801323
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_042",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 9208,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6546479684380621
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4343998945521353
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.23687896385125018
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_043",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 9836,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6308633429566723
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.30485745305400286
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2438017748361121
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_044",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 9352,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6573935235162207
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.31256842646680616
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.26712395205431977
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_045",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 46310,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6397082328139823
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4609797988059212
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.38202977404972394
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_046",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 7149,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6553082372356426
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4638822378848685
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.25504279917100875
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_047",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 7214,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6140449568078662
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.40786863302818105
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.20926642913188295
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.001328809054884547
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_048",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 7174,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6195182909840248
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.3100674014529984
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.44120362455120515
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_049",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 7726,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6201756874916758
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.589417251824315
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4364742026106555
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.02215493484843323
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_050",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 7520,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.49004786441032594
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.28617885046585817
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.12399376735786997
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_051",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 7499,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.49715865895130573
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4707877784059692
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.26116637243041957
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_052",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 6387,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.33307048960156266
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.07405521485974878
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.05279460090502407
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_053",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 5997,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6839771874688477
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4386470630839428
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5366740388402462
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_054",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 5469,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.39014110103153965
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.11588706278971765
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.07881757254985472
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_055",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 5530,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6688100863506964
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6289391883769255
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6162016773578611
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_056",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 5555,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5085334265660654
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.28617885046585817
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.12399376735786997
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_057",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 5857,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5111743920082507
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.15405982905982898
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.13422609298830404
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_058",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 6293,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.26813245743397235
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.02045268611944358
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_059",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6648,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6071064681911746
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2825012741252854
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.12139607323743272
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.0013238234553443597
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_060",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6712,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.7015821894699095
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6307068670533366
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6757578882243764
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.022099679903760758
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_061",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 33532,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6000923496221545
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5854524868285292
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.49143669448538935
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_062",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 4226,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6540979602392731
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4707877784059692
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4364742026106555
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_063",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 4228,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6462594960477438
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.45865349283468726
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4470600424804432
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_064",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 6596,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.11591869225531813
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_065",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6368,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6136341535697416
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.486236459094836
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4134094151212551
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_066",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 6237,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6788673996718885
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5935603659088845
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5399440472489901
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_067",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6033,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6675040808772216
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.3097533378592441
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2835766423357662
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_068",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 5988,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.684164354352446
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6225282421640506
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6272311097976466
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_069",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 29812,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6675579868592415
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4707877784059692
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.26116637243041957
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_070",
+   "tier": "blur",
+   "ok": true,
+   "latencyMs": 4390,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6353947006085964
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.447164090228863
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4424961222714028
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_071",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 4702,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.47415409338451936
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2886897034760507
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2821568994570306
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_072",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 4164,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6856502133352744
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5479096215223054
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5112353593290595
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_073",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 3839,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6530137416303263
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.589417251824315
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6696095764070968
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_074",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 3953,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.44329649207111965
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.19458600048646504
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.16550823205102907
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_075",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 5854,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.630255157159676
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.621920713470009
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6396346906543983
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_076",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 6051,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.511644237544901
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2825012741252854
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.12139607323743272
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_077",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 17946,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.49274471457049474
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4242872895798152
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4162097414445488
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.026688357031591625
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_078",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 4613,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6521255698454469
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.396137130864344
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4801787608912326
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_079",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 4234,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5418130862835072
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5169606335570935
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4800004304164551
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_080",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 4430,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6989561242468523
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4119493167976051
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5786844451047396
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_081",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 7094,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.60812902084146
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5522099046328117
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4524270491680896
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_082",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 11277,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6755803434338403
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.535632793844521
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5040214918172096
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_083",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 11389,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.7118652759570131
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.36040605652943825
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.39907510173880856
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_084",
+   "tier": "jpeg",
+   "ok": true,
+   "latencyMs": 4499,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6845172133145114
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.2992248389184321
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.27360082881871733
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_085",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 31334,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6895440400738616
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.486236459094836
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4134094151212551
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_086",
+   "tier": "blur",
+   "ok": true,
+   "latencyMs": 7628,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6424996974305274
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5183649621015054
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5962301104240051
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.056616643000385145
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_087",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 7464,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6201756874916758
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.15126641029041232
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.12195080540758489
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_088",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 7396,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6370425438448282
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.589417251824315
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5627059358878074
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_089",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6683,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6107479855302695
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5943723499935754
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.55192085362849
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_090",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6846,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_091",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 6236,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6406657066401283
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.14641252727506088
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.25533013973818386
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_092",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 8684,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_093",
+   "tier": "blur",
+   "ok": true,
+   "latencyMs": 8835,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5608125697524866
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5699362515937099
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5450529317064451
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_094",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 8760,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_095",
+   "tier": "clean",
+   "ok": true,
+   "latencyMs": 8263,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5085334265660654
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.30151074398309524
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.26116637243041957
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_096",
+   "tier": "rotate",
+   "ok": true,
+   "latencyMs": 7622,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.40189995088236974
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.12541587626365763
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.11555807191933855
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_097",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 12260,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5085334265660654
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4707877784059692
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.24312984922957465
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_098",
+   "tier": "noise",
+   "ok": true,
+   "latencyMs": 7709,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.6564305754205166
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4638822378848685
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.4248554763178529
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  },
+  {
+   "id": "inv_099",
+   "tier": "dim",
+   "ok": true,
+   "latencyMs": 3802,
+   "fieldScores": [
+    {
+     "key": "vendor",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.5855586088168856
+     ]
+    },
+    {
+     "key": "invoice_no",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.40786863302818105
+     ]
+    },
+    {
+     "key": "date",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0.22346234850491187
+     ]
+    },
+    {
+     "key": "subtotal",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "gst",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    },
+    {
+     "key": "total",
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "ious": [
+      0
+     ]
+    }
+   ],
+   "items": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   }
+  }
+ ]
+}

@@ -23,6 +23,9 @@ services/vision-worker/.venv/
 .env
 .env*.local
 
+# datasets (images reproducible from seed; keep labels + results)
+datasets/*/images/
+
 # uploads (local S3 stand-in, keep .gitkeep)
 uploads/*
 !uploads/.gitkeep
